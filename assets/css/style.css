@@ -51,7 +51,7 @@ body {
 	
 	background-image: url('../images/background.jpg');
 	background-size: contain;
-	font-family: NotoSansHK;
+	font-family: Hidetoshy;
 	font-weight: normal;
 }
 h1 {
@@ -68,6 +68,7 @@ h1 {
 #baseline {
     margin: 1.5em 0 1.0em 0;
     height: 5em;
+    font-size: 1.2em;
 }
 #logo-wengu {
 	font-size: 0.4em;
@@ -146,7 +147,7 @@ h1 {
 	padding-right: 20vw;
 }
 #consigne {
-    font-size: 1.2em;
+    font-size: 1.6em;
 	margin-bottom: 1.5em;
 }
 #coins, .bar {
@@ -204,13 +205,8 @@ body.hasHover .coin:hover {
 	line-height: 1.1em;
 	margin-bottom: -0.4em;
 }
-
-#result1 .hexagram-text {
-    font-weight: bold;
-}
 #result2 > p {
     color: #b96361;
-    font-weight: bold;
     margin-bottom: 0;
 	margin-top: -1em;
 }
@@ -246,7 +242,7 @@ body.hasHover .coin:hover {
 	background-color: #fad390;
 }
 #book-text {
-	font-size: 1.2em;
+	font-size: 1.6em;
 }
 #book-image {
 	font-size: 0.4em;
@@ -276,12 +272,7 @@ body.hasHover .coin:hover {
 FONTS
 */
 @font-face {
-	font-family: "NotoSansHK";
-	src: url(../fonts/NotoSansHK/NotoSansHK-Light.otf) format("opentype");
+	font-family: "Hidetoshy";
+	src: url(../fonts/Hidetoshy/Hidetoshy.ttf) format("truetype");
 	font-weight: normal;
-}
-@font-face {
-	font-family: "NotoSansHK";
-	src: url(../fonts/NotoSansHK/NotoSansHK-Bold.otf) format("opentype");
-	font-weight: bold;
 }

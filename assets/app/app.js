@@ -196,3 +196,31 @@ function PlaySound(src){
 		audioElement.play();
 	}
 }
+
+// preload
+/*
+var elementsLoaded = 0;
+
+preloadXHR([
+    'assets/fonts/NotoSansHK/NotoSansHK-Bold.otf',
+    'assets/fonts/NotoSansHK/NotoSansHK-Light.otf',
+	'assets/sounds/back.mp3',
+	'assets/sounds/coin1.mp3',
+	'assets/sounds/coin2.mp3',
+	'assets/sounds/coin3.mp3',
+	'assets/sounds/coin4.mp3',
+	'assets/sounds/yiking.mp3',
+]);
+
+function preloadXHR(assetsAr){
+	for (i=0; i<assetsAr.length; i++){
+		var xhr = new XMLHttpRequest();
+		xhr.open('GET', assetsAr[i]);
+		xhr.send('');
+		xhr.onload = function(e) {
+		  elementsLoaded++;
+		  console.log(elementsLoaded);
+		}
+	}
+}
+*/
