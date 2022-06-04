@@ -1,4 +1,5 @@
-    html,
+/************************* Swiper **********************/    
+	html,
     body {
       position: relative;
       height: 100%;
@@ -102,8 +103,8 @@ h1 {
 	right: 0;
 }
 #navbar-bottom {
-	bottom: 0;
-	left: calc(50vw - 1.5em);
+	bottom: 1em;
+	left: calc(50vw - 2.5em);
 }
 .button {
 	width: 3em;
@@ -113,6 +114,8 @@ h1 {
 #bt-back {
 	background-image: url('../images/bt-back.png');
 	background-size: contain;
+	width: 4em;
+	height: 4em;
 }
 #bt-lang-en, #bt-lang-fr {
 	background-image: url('../images/bt-flags.png');
