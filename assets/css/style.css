@@ -138,7 +138,7 @@ h1 {
 	padding-right: 20vw;
 }
 #consigne {
-    font-size: 1.5em;
+    font-size: 1.2em;
 	margin-bottom: 1.5em;
 }
 #coins, .bar {
@@ -192,8 +192,11 @@ body.hasHover .coin:hover {
 	background-position-y: 100%;
 }
 .hexagram-text {
-    font-size: 1.5em;
+    font-size: 1.8em;
+	line-height: 1.1em;
+	margin-bottom: -0.4em;
 }
+
 #result1 .hexagram-text {
     font-weight: bold;
 }
@@ -201,6 +204,28 @@ body.hasHover .coin:hover {
     color: #b96361;
     font-weight: bold;
     margin-bottom: 0;
+	margin-top: -1em;
+}
+.bloc {
+	background-image: url('../images/bloc.png');
+	background-size: contain;
+	width: calc(70vh / 14 * 9.6);
+	height: 70vh;
+}
+
+@media (max-width: 620px) {
+	.hexagram-text {
+		font-size: 1.2em;
+		margin-bottom: -0.4em;
+		width: 80vw;
+	}
+	#result1 .hexagram-text, #result2 > p {
+		margin-top: 2em;
+	}
+	.bloc {
+		width: 80vw;
+		height: calc(80vw / 9.6 * 14);
+	}
 }
 
 /*
