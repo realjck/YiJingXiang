@@ -2,7 +2,7 @@
 ********************
 Yi Jing Xiang
 Author: realjck
-v0.1
+v0.91
 ********************
 */
 
@@ -34,7 +34,6 @@ function watchForHover() {
 watchForHover();
 
 // Init swiper
-
 var swiper = new Swiper('.swiper', {
 	navigation: {
 		nextEl: '.swiper-button-next',
@@ -43,7 +42,6 @@ var swiper = new Swiper('.swiper', {
 });
 
 // Init lang
-
 var lang = "en";
 if (localStorage.getItem("YiJingXiang_lang")){
 	lang = localStorage.getItem("YiJingXiang_lang");
@@ -61,6 +59,7 @@ function SwitchLang(_lang){
 
 	$("#baseline").html(UI_TEXTS[lang]["baseline"]);
 	$("#consigne").html(UI_TEXTS[lang]["consigne"]);
+	$("#book-text").html(UI_TEXTS[lang]["book"]);
 
 	if(hexagram1 != null){
 		UpdateHexagramsTexts();
@@ -155,8 +154,15 @@ function UpdateHexagramsTexts(){
 	$("#result2 .hexagram-text").html(HEXAGRAMS_TEXTS[lang][hexagram2]);	
 }
 
-// sound
+// open link
+$("#book-image").on("click", function(e){
+	var hexatext = HEXAGRAMS_TEXTS[lang][hexagram1];
+	var num = hexatext.substr(0, hexatext.indexOf("."));
+	var url = "http://wengu.tartarie.com/wg/wengu.php?l=Yijing&tire="+yiking+"&no="+num+"&lang="+lang;
+	window.open(url, '_blank').focus();
+});
 
+// sound
 var sound = "1";
 if (localStorage.getItem("YiJingXiang_sound")){
 	sound = localStorage.getItem("YiJingXiang_sound");

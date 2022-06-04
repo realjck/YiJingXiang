@@ -220,6 +220,20 @@ body.hasHover .coin:hover {
 	width: calc(70vh / 14 * 9.6);
 	height: 70vh;
 }
+#book-text {
+	font-size: 1.2em;
+}
+#book-image {
+	font-size: 0.4em;
+	width: 34em;
+	height: 31em;
+	background-image: url('../images/book.png');
+	background-size: 100%;
+	cursor: pointer;
+}
+#book-image:hover {
+	background-position-y: 100%;
+}
 
 @media (max-width: 540px) {
 	.hexagram-text {
