@@ -96,7 +96,8 @@ function InitYiking(){
 		$("#end").hide();
 		swiper.update();
 	}, 500);
-
+	
+	PlaySound("back");
 }
 
 $("#coin-yang").on("click", function(e){
@@ -144,9 +145,48 @@ function AddBar(bar){
 		setTimeout(function(){
 			swiper.slideTo(2, 1200);
 		}, 500);
+		PlaySound("yiking");
+	} else {
+		PlaySound("coin"+Math.ceil(Math.random()*4));
 	}
 }
 function UpdateHexagramsTexts(){
 	$("#result1 .hexagram-text").html(HEXAGRAMS_TEXTS[lang][hexagram1]);
 	$("#result2 .hexagram-text").html(HEXAGRAMS_TEXTS[lang][hexagram2]);	
+}
+
+// sound
+
+var sound = "1";
+if (localStorage.getItem("YiJingXiang_sound")){
+	sound = localStorage.getItem("YiJingXiang_sound");
+}
+ApplyButtonSound();
+
+function ApplyButtonSound(){
+	if (sound == "1"){
+		$("#bt-sound").addClass("active");
+	} else {
+		$("#bt-sound").removeClass("active");
+	}
+	localStorage.setItem("YiJingXiang_sound", sound);
+}
+$("#bt-sound").on("click", function(e){
+	if (sound =="1"){
+		sound = "0";
+	} else {
+		sound = "1";
+	}
+	ApplyButtonSound();
+});
+
+var audioElement;
+$(document).ready(function() {
+    audioElement = document.createElement('audio');
+});
+function PlaySound(src){
+	if (sound == "1"){
+		audioElement.setAttribute('src', 'assets/sounds/'+src+'.mp3');
+		audioElement.play();
+	}
 }
