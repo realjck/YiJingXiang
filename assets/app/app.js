@@ -31,7 +31,7 @@ function watchForHover() {
   enableHover();
 }
 
-watchForHover()
+watchForHover();
 
 // Init swiper
 
@@ -50,7 +50,10 @@ if (localStorage.getItem("YiJingXiang_lang")){
 }
 SwitchLang(lang);
 
-function SwitchLang(lang){
+function SwitchLang(_lang){
+	
+	lang = _lang;
+	
 	$("#bt-lang-en, #bt-lang-fr").removeClass("active");
 	$("#bt-lang-"+lang).addClass("active");
 	
@@ -58,7 +61,10 @@ function SwitchLang(lang){
 
 	$("#baseline").html(UI_TEXTS[lang]["baseline"]);
 	$("#consigne").html(UI_TEXTS[lang]["consigne"]);
-	// todo : nom des résultat
+
+	if(hexagram1 != null){
+		UpdateHexagramsTexts();
+	}
 }
 
 $("#bt-lang-en").on("click", function(e){
@@ -70,6 +76,7 @@ $("#bt-lang-fr").on("click", function(e){
 
 // Yi-King Tirage
 var yiking = ""; // string for wengu ex 679866
+var hexagram1, hexagram2;
 
 $("#bt-back").on("click", InitYiking);
  
@@ -121,9 +128,15 @@ function AddBar(bar){
 	if (yiking.length == 6){
 		$("#coins").hide();
 		
-		// todo...
+		hexagram1 = yiking.replace(/6/g, "0").replace(/7/g, "1").replace(/8/g, "0").replace(/9/g, "1");
+		hexagram2 = yiking.replace(/6/g, "1").replace(/7/g, "1").replace(/8/g, "0").replace(/9/g, "0");
+		
+		UpdateHexagramsTexts();
+		
 		$("#result1").show();
-		$("#result2").show();
+		if (hexagram1 != hexagram2){
+			$("#result2").show();
+		}
 		$("#end").show();
 		
 		swiper.update();
@@ -132,4 +145,8 @@ function AddBar(bar){
 			swiper.slideTo(2, 1200);
 		}, 500);
 	}
+}
+function UpdateHexagramsTexts(){
+	$("#result1 .hexagram-text").html(HEXAGRAMS_TEXTS[lang][hexagram1]);
+	$("#result2 .hexagram-text").html(HEXAGRAMS_TEXTS[lang][hexagram2]);	
 }

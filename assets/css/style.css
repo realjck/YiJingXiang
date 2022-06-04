@@ -191,18 +191,28 @@ body.hasHover .coin:hover {
 .bar-yang-mut {
 	background-position-y: 100%;
 }
+.hexagram-text {
+    font-size: 1.5em;
+}
+#result1 .hexagram-text {
+    font-weight: bold;
+}
+#result2 > p {
+    color: #b96361;
+    font-weight: bold;
+    margin-bottom: 0;
+}
 
 /*
 FONTS
 */
 @font-face {
 	font-family: "NotoSansHK";
-	src: url(../fonts/NotoSansHK/NotoSansHK-Bold.otf) format("opentype");
-	font-weight: bold;
-}
-
-@font-face {
-	font-family: "NotoSansHK";
 	src: url(../fonts/NotoSansHK/NotoSansHK-Light.otf) format("opentype");
 	font-weight: normal;
+}
+@font-face {
+	font-family: "NotoSansHK";
+	src: url(../fonts/NotoSansHK/NotoSansHK-Bold.otf) format("opentype");
+	font-weight: bold;
 }
