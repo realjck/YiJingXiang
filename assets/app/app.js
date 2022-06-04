@@ -6,6 +6,32 @@ v0.1
 ********************
 */
 
+// touch?
+function watchForHover() {
+  // lastTouchTime is used for ignoring emulated mousemove events
+  let lastTouchTime = 0;
+
+  function enableHover() {
+    if (new Date() - lastTouchTime < 500) return;
+    document.body.classList.add('hasHover');
+  }
+
+  function disableHover() {
+    document.body.classList.remove('hasHover');
+  }
+
+  function updateLastTouchTime() {
+    lastTouchTime = new Date();
+  }
+
+  document.addEventListener('touchstart', updateLastTouchTime, true);
+  document.addEventListener('touchstart', disableHover, true);
+  document.addEventListener('mousemove', enableHover, true);
+
+  enableHover();
+}
+
+watchForHover()
 
 // Init swiper
 
@@ -84,7 +110,8 @@ function AddBar(bar){
 	$("#bt-back").show();
 	$("#consigne").hide();
 	
-	$('<div class="bar bar-'+bar+'"></div>').insertAfter("#coins").hide().fadeIn();;
+	$('<div class="bar bar-'+bar+'"></div>').insertAfter("#coins").hide().fadeIn();
+	
 	switch(bar){
 		case "yin-mut": yiking += "6"; break;
 		case "yang": yiking += "7"; break;

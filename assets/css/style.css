@@ -46,6 +46,8 @@ body {
     user-select: none;
 	scroll-behavior: smooth;
 	
+	-webkit-tap-highlight-color:  rgba(255, 255, 255, 0); 
+	
 	background-image: url('../images/background.jpg');
 	background-size: contain;
 	font-family: NotoSansHK;
@@ -153,7 +155,7 @@ h1 {
 	background-size: 200%;
 	cursor: pointer;
 }
-.coin:hover {
+body.hasHover .coin:hover {
 	background-position-x: 100%;
 }
 #coin-yang {
