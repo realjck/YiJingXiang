@@ -231,7 +231,7 @@ body.hasHover .coin:hover {
     width: 75%;
     height: 42%;
     margin-left: 12.5%;
-    background-color: #82ccdd;
+	background-size: cover;
 }
 .img-top {
     margin-top: 12%;
@@ -239,7 +239,6 @@ body.hasHover .coin:hover {
 }
 .img-bottom {
 	border-radius: 0 0 5% 5%;
-	background-color: #fad390;
 }
 #book-text {
 	font-size: 1.6em;

@@ -2,7 +2,7 @@
 ********************
 Yi Jing Xiang
 Author: realjck
-v0.91
+v0.92
 ********************
 */
 
@@ -130,6 +130,12 @@ function AddBar(bar){
 		
 		hexagram1 = yiking.replace(/6/g, "0").replace(/7/g, "1").replace(/8/g, "0").replace(/9/g, "1");
 		hexagram2 = yiking.replace(/6/g, "1").replace(/7/g, "1").replace(/8/g, "0").replace(/9/g, "0");
+
+		// images
+		$("#result1 .img-top").css("background-image", "url('assets/images/"+hexagram1.substring(0,3)+".jpg'");
+		$("#result1 .img-bottom").css("background-image", "url('assets/images/"+hexagram1.substring(3)+".jpg'");
+		$("#result2 .img-top").css("background-image", "url('assets/images/"+hexagram2.substring(0,3)+".jpg'");
+		$("#result2 .img-bottom").css("background-image", "url('assets/images/"+hexagram2.substring(3)+".jpg'");
 		
 		UpdateHexagramsTexts();
 		
@@ -198,12 +204,18 @@ function PlaySound(src){
 }
 
 // preload
-/*
+
 var elementsLoaded = 0;
 
 preloadXHR([
-    'assets/fonts/NotoSansHK/NotoSansHK-Bold.otf',
-    'assets/fonts/NotoSansHK/NotoSansHK-Light.otf',
+    'assets/images/000.jpg',
+	'assets/images/001.jpg',
+	'assets/images/011.jpg',
+	'assets/images/111.jpg',
+	'assets/images/010.jpg',
+	'assets/images/110.jpg',
+	'assets/images/100.jpg',
+	'assets/images/101.jpg',
 	'assets/sounds/back.mp3',
 	'assets/sounds/coin1.mp3',
 	'assets/sounds/coin2.mp3',
@@ -223,4 +235,3 @@ function preloadXHR(assetsAr){
 		}
 	}
 }
-*/
