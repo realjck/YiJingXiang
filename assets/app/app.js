@@ -192,12 +192,9 @@ $("#bt-sound").on("click", function(e){
 	ApplyButtonSound();
 });
 
-var audioElement;
-$(document).ready(function() {
-    audioElement = document.createElement('audio');
-});
 function PlaySound(src){
 	if (sound == "1"){
+		var audioElement = document.createElement('audio');
 		audioElement.setAttribute('src', 'assets/sounds/'+src+'.mp3');
 		audioElement.play();
 	}
