@@ -132,10 +132,10 @@ function AddBar(bar){
 		hexagram2 = yiking.replace(/6/g, "1").replace(/7/g, "1").replace(/8/g, "0").replace(/9/g, "0");
 
 		// images
-		$("#result1 .img-top").css("background-image", "url('assets/images/"+hexagram1.substring(0,3)+".jpg'");
-		$("#result1 .img-bottom").css("background-image", "url('assets/images/"+hexagram1.substring(3)+".jpg'");
-		$("#result2 .img-top").css("background-image", "url('assets/images/"+hexagram2.substring(0,3)+".jpg'");
-		$("#result2 .img-bottom").css("background-image", "url('assets/images/"+hexagram2.substring(3)+".jpg'");
+		$("#result1 .img-bottom").css("background-image", "url('assets/images/"+hexagram1.substring(0,3)+".jpg'");
+		$("#result1 .img-top").css("background-image", "url('assets/images/"+hexagram1.substring(3)+".jpg'");
+		$("#result2 .img-bottom").css("background-image", "url('assets/images/"+hexagram2.substring(0,3)+".jpg'");
+		$("#result2 .img-top").css("background-image", "url('assets/images/"+hexagram2.substring(3)+".jpg'");
 		
 		UpdateHexagramsTexts();
 		
