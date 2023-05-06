@@ -220,7 +220,6 @@ function preloadXHR(assetsAr){
 		xhr.send('');
 		xhr.onload = function(e) {
 		  elementsLoaded++;
-		  console.log(elementsLoaded);
 		}
 	}
 }
