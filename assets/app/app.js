@@ -34,15 +34,19 @@ function watchForHover() {
 watchForHover();
 
 // Init swiper
-var swiper = new Swiper('.swiper', {
+const swiper = new Swiper('.swiper', {
 	navigation: {
 		nextEl: '.swiper-button-next',
 		prevEl: '.swiper-button-prev',
 	}
 });
 
+// Yi-King Tirage
+let yiking = ""; // string for wengu ex 679866
+let hexagram1, hexagram2;
+
 // Init lang
-var lang = "en";
+let lang = "en";
 if (localStorage.getItem("YiJingXiang_lang")){
 	lang = localStorage.getItem("YiJingXiang_lang");
 }
@@ -73,10 +77,6 @@ $("#bt-lang-fr").on("click", function(e){
 	SwitchLang("fr");
 });
 
-// Yi-King Tirage
-var yiking = ""; // string for wengu ex 679866
-var hexagram1, hexagram2;
-
 $("#bt-back").on("click", InitYiking);
  
 function InitYiking(){
@@ -99,18 +99,10 @@ function InitYiking(){
 	PlaySound("back");
 }
 
-$("#coin-yang").on("click", function(e){
-	AddBar("yang");
-});
-$("#coin-yin").on("click", function(e){
-	AddBar("yin");
-});
-$("#coin-yang-mut").on("click", function(e){
-	AddBar("yang-mut");
-});
-$("#coin-yin-mut").on("click", function(e){
-	AddBar("yin-mut");
-});
+$("#coin-yang").on("click", () => {AddBar("yang")});
+$("#coin-yin").on("click", () => {AddBar("yin")});
+$("#coin-yang-mut").on("click", () => {AddBar("yang-mut")});
+$("#coin-yin-mut").on("click", () => {AddBar("yin-mut")});
 
 function AddBar(bar){
 	
@@ -184,7 +176,7 @@ function ApplyButtonSound(){
 	localStorage.setItem("YiJingXiang_sound", sound);
 }
 $("#bt-sound").on("click", function(e){
-	if (sound =="1"){
+	if (sound == "1"){
 		sound = "0";
 	} else {
 		sound = "1";
@@ -222,7 +214,7 @@ preloadXHR([
 ]);
 
 function preloadXHR(assetsAr){
-	for (i=0; i<assetsAr.length; i++){
+	for (let i=0; i<assetsAr.length; i++){
 		var xhr = new XMLHttpRequest();
 		xhr.open('GET', assetsAr[i]);
 		xhr.send('');
