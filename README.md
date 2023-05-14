@@ -1,5 +1,4 @@
 # Yi Jing Xiang
-## (work in progress)
 
 Web application written in static JS which allows to make Yi Jing casts, then display them in form of trigram pictures.
 
