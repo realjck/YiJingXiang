@@ -2,12 +2,12 @@
 ********************
 Yi Jing Xiang
 Author: realjck
-v0.92
+v0.95
 ********************
 */
 
 // touch?
-function watchForHover() {
+(function () {
   // lastTouchTime is used for ignoring emulated mousemove events
   let lastTouchTime = 0;
 
@@ -29,9 +29,8 @@ function watchForHover() {
   document.addEventListener('mousemove', enableHover, true);
 
   enableHover();
-}
+})();
 
-watchForHover();
 
 // Init swiper
 const swiper = new Swiper('.swiper', {
@@ -46,10 +45,7 @@ let yiking = ""; // string for wengu ex 679866
 let hexagram1, hexagram2;
 
 // Init lang
-let lang = "en";
-if (localStorage.getItem("YiJingXiang_lang")){
-	lang = localStorage.getItem("YiJingXiang_lang");
-}
+let lang = localStorage.getItem("YiJingXiang_lang") ?? "en";
 SwitchLang(lang);
 
 function SwitchLang(_lang){
@@ -70,16 +66,14 @@ function SwitchLang(_lang){
 	}
 }
 
-$("#bt-lang-en").on("click", function(e){
+$("#bt-lang-en").on("click", ()=>{
 	SwitchLang("en");
 });
-$("#bt-lang-fr").on("click", function(e){
+$("#bt-lang-fr").on("click", ()=>{
 	SwitchLang("fr");
 });
 
-$("#bt-back").on("click", InitYiking);
- 
-function InitYiking(){
+$("#bt-back").on("click", () =>{
 	yiking = "";
 	
 	$("#consigne").show();
@@ -97,7 +91,7 @@ function InitYiking(){
 	}, 500);
 	
 	PlaySound("back");
-}
+});
 
 $("#coin-yang").on("click", () => {AddBar("yang")});
 $("#coin-yin").on("click", () => {AddBar("yin")});
@@ -153,7 +147,7 @@ function UpdateHexagramsTexts(){
 }
 
 // open link
-$("#book-image").on("click", function(e){
+$("#book-image").on("click", ()=>{
 	var hexatext = HEXAGRAMS_TEXTS[lang][hexagram1];
 	var num = hexatext.substr(0, hexatext.indexOf("."));
 	var url = "http://wengu.tartarie.com/wg/wengu.php?l=Yijing&tire="+yiking+"&no="+num+"&lang="+lang;
@@ -161,10 +155,7 @@ $("#book-image").on("click", function(e){
 });
 
 // sound
-var sound = "1";
-if (localStorage.getItem("YiJingXiang_sound")){
-	sound = localStorage.getItem("YiJingXiang_sound");
-}
+let sound = localStorage.getItem("YiJingXiang_sound") ?? "1";
 ApplyButtonSound();
 
 function ApplyButtonSound(){
@@ -175,12 +166,8 @@ function ApplyButtonSound(){
 	}
 	localStorage.setItem("YiJingXiang_sound", sound);
 }
-$("#bt-sound").on("click", function(e){
-	if (sound == "1"){
-		sound = "0";
-	} else {
-		sound = "1";
-	}
+$("#bt-sound").on("click", ()=>{
+	sound = sound == "0" ? "1" : "0";
 	ApplyButtonSound();
 });
 
@@ -215,7 +202,7 @@ preloadXHR([
 
 function preloadXHR(assetsAr){
 	for (let i=0; i<assetsAr.length; i++){
-		var xhr = new XMLHttpRequest();
+		const xhr = new XMLHttpRequest();
 		xhr.open('GET', assetsAr[i]);
 		xhr.send('');
 		xhr.onload = function(e) {
