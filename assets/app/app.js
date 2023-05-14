@@ -148,9 +148,9 @@ function UpdateHexagramsTexts(){
 
 // open link
 $("#book-image").on("click", ()=>{
-	var hexatext = HEXAGRAMS_TEXTS[lang][hexagram1];
-	var num = hexatext.substr(0, hexatext.indexOf("."));
-	var url = "http://wengu.tartarie.com/wg/wengu.php?l=Yijing&tire="+yiking+"&no="+num+"&lang="+lang;
+	const hexatext = HEXAGRAMS_TEXTS[lang][hexagram1];
+	const num = hexatext.substr(0, hexatext.indexOf("."));
+	const url = "http://wengu.tartarie.com/wg/wengu.php?l=Yijing&tire="+yiking+"&no="+num+"&lang="+lang;
 	window.open(url, '_blank').focus();
 });
 
@@ -173,15 +173,14 @@ $("#bt-sound").on("click", ()=>{
 
 function PlaySound(src){
 	if (sound == "1"){
-		var audioElement = document.createElement('audio');
+		const audioElement = document.createElement('audio');
 		audioElement.setAttribute('src', 'assets/sounds/'+src+'.mp3');
 		audioElement.play();
+		audioElement.remove();
 	}
 }
 
 // preload
-
-var elementsLoaded = 0;
 
 preloadXHR([
     'assets/images/000.jpg',
@@ -205,8 +204,5 @@ function preloadXHR(assetsAr){
 		const xhr = new XMLHttpRequest();
 		xhr.open('GET', assetsAr[i]);
 		xhr.send('');
-		xhr.onload = function(e) {
-		  elementsLoaded++;
-		}
 	}
 }
