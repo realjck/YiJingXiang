@@ -1,8 +1,7 @@
 /*
 ********************
 Yi Jing Xiang
-Author: realjck
-v0.95
+Author: jck
 ********************
 */
 
@@ -60,6 +59,8 @@ function SwitchLang(_lang){
 	$("#baseline").html(UI_TEXTS[lang]["baseline"]);
 	$("#consigne").html(UI_TEXTS[lang]["consigne"]);
 	$("#book-text").html(UI_TEXTS[lang]["book"]);
+
+	$("#info").html(UI_TEXTS[lang]["info"]);
 
 	if(hexagram1 != null){
 		UpdateHexagramsTexts();
@@ -152,6 +153,21 @@ $("#book-image").on("click", ()=>{
 	const num = hexatext.substr(0, hexatext.indexOf("."));
 	const url = "http://wengu.tartarie.com/wg/wengu.php?l=Yijing&tire="+yiking+"&no="+num+"&lang="+lang;
 	window.open(url, '_blank').focus();
+});
+
+// info
+let showInfo = false;
+$("#bt-info").on("click", ()=>{
+	showInfo = !showInfo;
+	if (showInfo){
+		$("#info").show();
+	} else {
+		$("#info").hide();
+	}
+});
+$("#info").on("click", ()=>{
+	$("#info").hide();
+	showInfo = false;
 });
 
 // sound

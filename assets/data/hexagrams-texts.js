@@ -1,4 +1,4 @@
-var HEXAGRAMS_TEXTS = {};
+const HEXAGRAMS_TEXTS = {};
 
 HEXAGRAMS_TEXTS["en"] = {
 	"111111": "1. 乾 Ch'ien / The Creative",
