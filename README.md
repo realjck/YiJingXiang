@@ -6,7 +6,7 @@ Each cast refers to a direct-link to [wengu.tartarie Yi Jing web book](http://we
 
 [**[THIS LINK TO THE APP]** Site hosted on Github page in this repository ](https://realjck.github.io/yi-jing-xiang/)
 
-### This webpage uses:
+### Libraries:
 
 * jQuery
 * [Swiper.js](https://swiperjs.com/)
