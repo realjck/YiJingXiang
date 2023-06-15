@@ -64,6 +64,8 @@ h1 {
 	height: 31em;
 	background-image: url('../images/yijingxiang-logo.png');
 	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
 }
 #baseline {
     margin: 1.5em 0 1.0em 0;
@@ -275,14 +277,60 @@ body.hasHover .coin:hover {
 }
 
 @media (max-width: 540px) {
+	h1 {
+		font-size: 1.2em;
+	}
+	#logo, #book-image {
+		width: 24em;
+		height: 22em;
+	}
+	#baseline, #book-text {
+		font-size: 0.7em;
+	}
 	.hexagram-text {
 		font-size: 1.2em;
-		margin-bottom: -0.4em;
+		margin-bottom: -1em;
 		width: 80vw;
+	}
+	#coins {
+		scale: 0.7;
+	}
+	#consigne {
+		font-size: 0.5em;
+	}
+	#bt-back {
+		width: 2.5em;
+		height: 2.5em;
 	}
 	.bloc {
 		width: 80vw;
 		height: calc(80vw / 9.6 * 14);
+		scale: 0.7;
+	}
+	.bar {
+		scale: 0.7;
+		margin: 0;
+	}
+	#logo-wengu {
+		font-size: 0.4em;
+		width: 8em;
+		height: 6em;
+	}
+	#info {
+		padding-left: 10%;
+    	padding-right: 10%;
+		line-height: 1.2em;
+	}
+	#info > p {
+		font-size: 0.8em;
+	}
+	.button {
+		width: 2em;
+		height: 2em;
+	}
+	.swiper-button-next, .swiper-button-prev {
+		width: 1em;
+		height: 2em;
 	}
 }
 
