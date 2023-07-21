@@ -1,0 +1,23 @@
+{
+  "short_name": "YiJing Xiang",
+  "name": "YiJing Xiang",
+  "icons": [
+    {
+      "src": "/assets/images/favicon.png",
+      "type": "image/png",
+      "sizes": "192x192",
+	  "purpose": "maksable"
+    },
+    {
+      "src": "/assets/images/favicon_512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable"
+    }
+  ],
+  "theme_color": "#c6c2be",
+  "background_color": "#c6c2be",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/index.html"
+}
