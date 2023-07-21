@@ -3,13 +3,13 @@
   "name": "YiJing Xiang",
   "icons": [
     {
-      "src": "/assets/images/favicon.svg",
+      "src": "/yi-jing-xiang/assets/images/favicon.svg",
       "type": "image/svg+xml",
       "sizes": "512x512",
       "purpose": "maskable"
     },
     {
-      "src": "/assets/images/favicon.png",
+      "src": "/yi-jing-xiang/assets/images/favicon.png",
       "type": "image/png",
       "sizes": "192x192",
 	  "purpose": "any"
