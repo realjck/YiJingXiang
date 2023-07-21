@@ -6,7 +6,7 @@
       "src": "/assets/images/favicon.png",
       "type": "image/png",
       "sizes": "192x192",
-	  "purpose": "maksable"
+	  "purpose": "any"
     },
     {
       "src": "/assets/images/favicon_512.png",
