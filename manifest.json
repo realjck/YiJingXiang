@@ -3,13 +3,13 @@
   "name": "YiJing Xiang",
   "icons": [
     {
-      "src": "/yi-jing-xiang/assets/images/favicon.svg",
+      "src": "./assets/images/favicon.svg",
       "type": "image/svg+xml",
       "sizes": "512x512",
       "purpose": "maskable"
     },
     {
-      "src": "/yi-jing-xiang/assets/images/favicon.png",
+      "src": "./assets/images/favicon.png",
       "type": "image/png",
       "sizes": "192x192",
 	  "purpose": "any"
@@ -19,5 +19,5 @@
   "background_color": "#c6c2be",
   "display": "standalone",
   "scope": "/yi-jing-xiang/",
-  "start_url": "/yi-jing-xiang/index.html"
+  "start_url": "./index.html"
 }
