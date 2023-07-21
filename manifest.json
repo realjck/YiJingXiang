@@ -8,6 +8,12 @@
       "sizes": "512x512",
       "purpose": "maskable"
     },
+	{
+      "src": "./assets/images/favicon_512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable"
+    },
     {
       "src": "./assets/images/favicon.png",
       "type": "image/png",
