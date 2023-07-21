@@ -19,5 +19,5 @@
   "background_color": "#c6c2be",
   "display": "standalone",
   "scope": "/yi-jing-xiang/",
-  "start_url": "/index.html"
+  "start_url": "/yi-jing-xiang/index.html"
 }
