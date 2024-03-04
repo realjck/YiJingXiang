@@ -1,0 +1,6 @@
+{
+  "name": "YiJing Xiang",
+  "dependencies": {
+    "workbox-cli": "^7.0.0"
+  }
+}
