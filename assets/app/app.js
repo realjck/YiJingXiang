@@ -139,7 +139,7 @@ function AddBar(bar){
 		}, 500);
 		PlaySound("yiking");
 	} else {
-		PlaySound("coin"+Math.ceil(Math.random()*4));
+		PlaySound("coin"+Math.ceil(Math.random()*2));
 	}
 }
 function UpdateHexagramsTexts(){
@@ -210,8 +210,6 @@ preloadXHR([
 	'assets/sounds/back.mp3',
 	'assets/sounds/coin1.mp3',
 	'assets/sounds/coin2.mp3',
-	'assets/sounds/coin3.mp3',
-	'assets/sounds/coin4.mp3',
 	'assets/sounds/yiking.mp3',
 ]);
 
