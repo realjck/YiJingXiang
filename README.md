@@ -14,7 +14,7 @@ Each cast refers to a direct-link to [wengu.tartarie Yi Jing web book](http://we
 >
 > Many thanks to Sandrine for the illustrations.
 
-[**[This link to the app]** (hosted in this repository )](https://realjck.github.io/yi-jing-xiang/)
+## ☯️ [**[This link to the app]** (hosted in this repository )](https://realjck.github.io/yi-jing-xiang/)
 
 ## Installation
 ```bash
