@@ -1,3 +1,5 @@
 /UI/
 /node_modules/
 .idea
+sw.js
+sw.js.map
