@@ -5,7 +5,16 @@ Author: jck
 ********************
 */
 
-// touch?
+/**
+ * Init some constant elements
+ */
+const btBack = $("#bt-back");
+const info = $("#info");
+const btSound = $("#bt-sound");
+
+/**
+ * For touch devices
+ */
 (function () {
   // lastTouchTime is used for ignoring emulated mousemove events
   let lastTouchTime = 0;
@@ -30,8 +39,9 @@ Author: jck
   enableHover();
 })();
 
-
-// Init swiper
+/**
+ * Initialize Swiper
+ */
 const swiper = new Swiper('.swiper', {
 	navigation: {
 		nextEl: '.swiper-button-next',
@@ -39,11 +49,15 @@ const swiper = new Swiper('.swiper', {
 	}
 });
 
-// Yi-King Tirage
+/**
+ * Yi-King Tirage variables
+ */
 let yiking = ""; // string for wengu ex 679866
 let hexagram1, hexagram2;
 
-// Init lang
+/**
+ * Initialize localization
+ */
 let lang = localStorage.getItem("YiJingXiang_lang") ?? "en";
 SwitchLang(lang);
 
@@ -60,7 +74,7 @@ function SwitchLang(_lang){
 	$("#consigne").html(UI_TEXTS[lang]["consigne"]);
 	$("#book-text").html(UI_TEXTS[lang]["book"]);
 
-	$("#info").html(UI_TEXTS[lang]["info"]);
+	info.html(UI_TEXTS[lang]["info"]);
 
 	if(hexagram1 != null){
 		UpdateHexagramsTexts();
@@ -74,13 +88,16 @@ $("#bt-lang-fr").on("click", ()=>{
 	SwitchLang("fr");
 });
 
-$("#bt-back").on("click", () =>{
+/**
+ * Main logic
+ */
+btBack.on("click", () =>{
 	yiking = "";
 	
 	$("#consigne").show();
 	$(".bar").remove();
 	$("#coins").show();
-	$("#bt-back").hide();
+	btBack.hide();
 	
 	swiper.slideTo(1, 500);
 	
@@ -100,8 +117,8 @@ $("#coin-yang-mut").on("click", () => {AddBar("yang-mut")});
 $("#coin-yin-mut").on("click", () => {AddBar("yin-mut")});
 
 function AddBar(bar){
-	
-	$("#bt-back").show();
+
+	btBack.show();
 	$("#consigne").hide();
 	
 	$('<div class="bar bar-'+bar+'"></div>').insertAfter("#coins").hide().fadeIn();
@@ -112,11 +129,17 @@ function AddBar(bar){
 		case "yin": yiking += "8"; break;
 		case "yang-mut": yiking += "9"; break;
 	}
-	if (yiking.length == 6){
+	if (yiking.length === 6){
 		$("#coins").hide();
 		
-		hexagram1 = yiking.replace(/6/g, "0").replace(/7/g, "1").replace(/8/g, "0").replace(/9/g, "1");
-		hexagram2 = yiking.replace(/6/g, "1").replace(/7/g, "1").replace(/8/g, "0").replace(/9/g, "0");
+		hexagram1 = yiking.replace(/6/g, "0")
+			.replace(/7/g,"1")
+			.replace(/8/g, "0")
+			.replace(/9/g, "1");
+		hexagram2 = yiking.replace(/6/g, "1")
+			.replace(/7/g, "1")
+			.replace(/8/g, "0")
+			.replace(/9/g, "0");
 
 		// images
 		$("#result1 .img-bottom").css("background-image", "url('assets/images/"+hexagram1.substring(0,3)+".jpg'");
@@ -127,7 +150,7 @@ function AddBar(bar){
 		UpdateHexagramsTexts();
 		
 		$("#result1").show();
-		if (hexagram1 != hexagram2){
+		if (hexagram1 !== hexagram2){
 			$("#result2").show();
 		}
 		$("#end").show();
@@ -147,57 +170,65 @@ function UpdateHexagramsTexts(){
 	$("#result2 .hexagram-text").html(HEXAGRAMS_TEXTS[lang][hexagram2]);	
 }
 
-// open link
+/**
+ * Link to Wengu Tartarie book
+ */
 $("#book-image").on("click", ()=>{
 	const hexatext = HEXAGRAMS_TEXTS[lang][hexagram1];
-	const num = hexatext.substr(0, hexatext.indexOf("."));
+	const num = hexatext.substring(0, hexatext.indexOf("."));
 	const url = "http://wengu.tartarie.com/wg/wengu.php?l=Yijing&tire="+yiking+"&no="+num+"&lang="+lang;
 	window.open(url, '_blank').focus();
 });
 
-// info
+/**
+ * Show infos
+ */
 let showInfo = false;
 $("#bt-info").on("click", ()=>{
 	showInfo = !showInfo;
 	if (showInfo){
-		$("#info").show();
+		info.show();
 	} else {
-		$("#info").hide();
+		info.hide();
 	}
 });
-$("#info").on("click", ()=>{
-	$("#info").hide();
+
+info.on("click", ()=>{
+	info.hide();
 	showInfo = false;
 });
 
-// sound
+/**
+ * Sounds
+ */
 let sound = localStorage.getItem("YiJingXiang_sound") ?? "1";
 ApplyButtonSound();
 
 function ApplyButtonSound(){
-	if (sound == "1"){
-		$("#bt-sound").addClass("active");
+	if (sound === "1"){
+		btSound.addClass("active");
 	} else {
-		$("#bt-sound").removeClass("active");
+		btSound.removeClass("active");
 	}
 	localStorage.setItem("YiJingXiang_sound", sound);
 }
-$("#bt-sound").on("click", ()=>{
-	sound = sound == "0" ? "1" : "0";
+btSound.on("click", ()=>{
+	sound = sound === "0" ? "1" : "0";
 	ApplyButtonSound();
 });
 
 function PlaySound(src){
-	if (sound == "1"){
+	if (sound === "1"){
 		const audioElement = document.createElement('audio');
 		audioElement.setAttribute('src', 'assets/sounds/'+src+'.mp3');
-		audioElement.play();
+		audioElement.play().then();
 		audioElement.remove();
 	}
 }
 
-// preload
-
+/**
+ * Preload assets
+ */
 preloadXHR([
     'assets/images/000.jpg',
 	'assets/images/001.jpg',
