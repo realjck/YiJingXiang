@@ -175,7 +175,7 @@ h1 {
 	overflow-y: auto;
 }
 
-#consigne {
+.consigne {
 	font-family: Georgia, 'Times New Roman', Times, serif;
 	line-height: 1.2em;
 	letter-spacing: 0.1em;

@@ -71,7 +71,8 @@ function SwitchLang(_lang){
 	localStorage.setItem("YiJingXiang_lang", lang);
 
 	$("#baseline").html(UI_TEXTS[lang]["baseline"]);
-	$("#consigne").html(UI_TEXTS[lang]["consigne"]);
+	$("#consigne-1").html(UI_TEXTS[lang]["consigne-1"]);
+	$("#consigne-2").html(UI_TEXTS[lang]["consigne-2"]);
 	$("#book-text").html(UI_TEXTS[lang]["book"]);
 
 	info.html(UI_TEXTS[lang]["info"]);
@@ -96,7 +97,7 @@ $("#bt-lang-fr").on("click", ()=>{
 btBack.on("click", () =>{
 	yiking = "";
 	
-	$("#consigne").show();
+	$(".consigne").show();
 	$(".bar").remove();
 	$("#coins").show();
 	btBack.hide();
@@ -121,7 +122,7 @@ $("#coin-yin-mut").on("click", () => {AddBar("yin-mut")});
 function AddBar(bar){
 
 	btBack.show();
-	$("#consigne").hide();
+	$(".consigne").hide();
 	
 	$('<div class="bar bar-'+bar+'"></div>').insertAfter("#coins").hide().fadeIn();
 	
