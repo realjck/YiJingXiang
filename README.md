@@ -16,12 +16,15 @@ Each cast refers to a direct-link to [wengu.tartarie Yi Jing web book](http://we
 
 ## ☯️ [**[This link to the app]** (hosted in this repository )](https://realjck.github.io/yi-jing-xiang/)
 
-## Installation
-```bash
+## Build for PWA
+
+```
 # clone repository
 git clone https://github.com/realjck/yi-jing-xiang.git
+
 # Install workbox-cli dependency
 npm install
+
 # Build Service Worker sw.js
 npm run pwa
 ```
@@ -31,4 +34,4 @@ npm run pwa
 * [jQuery](https://jquery.com/)
 * [Swiper.js](https://github.com/nolimits4web/swiper)
 
-### [License](https://creativecommons.org/publicdomain/zero/1.0/)
+### [License CC0](https://creativecommons.org/publicdomain/zero/1.0/)
