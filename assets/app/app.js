@@ -71,7 +71,8 @@ function SwitchLang(_lang){
 	localStorage.setItem("YiJingXiang_lang", lang);
 
 	$("#baseline").html(UI_TEXTS[lang]["baseline"]);
-	$("#consigne").html(UI_TEXTS[lang]["consigne"]);
+	$("#consigne-1").html(UI_TEXTS[lang]["consigne-1"]);
+	$("#consigne-2").html(UI_TEXTS[lang]["consigne-2"]);
 	$("#book-text").html(UI_TEXTS[lang]["book"]);
 
 	info.html(UI_TEXTS[lang]["info"]);
@@ -82,9 +83,11 @@ function SwitchLang(_lang){
 }
 
 $("#bt-lang-en").on("click", ()=>{
+	PlaySound("click");
 	SwitchLang("en");
 });
 $("#bt-lang-fr").on("click", ()=>{
+	PlaySound("click");
 	SwitchLang("fr");
 });
 
@@ -94,7 +97,7 @@ $("#bt-lang-fr").on("click", ()=>{
 btBack.on("click", () =>{
 	yiking = "";
 	
-	$("#consigne").show();
+	$(".consigne").show();
 	$(".bar").remove();
 	$("#coins").show();
 	btBack.hide();
@@ -119,7 +122,7 @@ $("#coin-yin-mut").on("click", () => {AddBar("yin-mut")});
 function AddBar(bar){
 
 	btBack.show();
-	$("#consigne").hide();
+	$(".consigne").hide();
 	
 	$('<div class="bar bar-'+bar+'"></div>').insertAfter("#coins").hide().fadeIn();
 	
@@ -174,6 +177,7 @@ function UpdateHexagramsTexts(){
  * Link to Wengu Tartarie book
  */
 $("#book-image").on("click", ()=>{
+	PlaySound("click");
 	const hexatext = HEXAGRAMS_TEXTS[lang][hexagram1];
 	const num = hexatext.substring(0, hexatext.indexOf("."));
 	const url = "http://wengu.tartarie.com/wg/wengu.php?l=Yijing&tire="+yiking+"&no="+num+"&lang="+lang;
@@ -185,6 +189,7 @@ $("#book-image").on("click", ()=>{
  */
 let showInfo = false;
 $("#bt-info").on("click", ()=>{
+	PlaySound("click");
 	showInfo = !showInfo;
 	if (showInfo){
 		info.show();
@@ -194,6 +199,7 @@ $("#bt-info").on("click", ()=>{
 });
 
 info.on("click", ()=>{
+	PlaySound("click");
 	info.hide();
 	showInfo = false;
 });
@@ -242,6 +248,7 @@ preloadXHR([
 	'assets/sounds/coin1.mp3',
 	'assets/sounds/coin2.mp3',
 	'assets/sounds/yiking.mp3',
+	'assets/sounds/click.mp3'
 ]);
 
 function preloadXHR(assetsAr){
