@@ -82,9 +82,11 @@ function SwitchLang(_lang){
 }
 
 $("#bt-lang-en").on("click", ()=>{
+	PlaySound("click");
 	SwitchLang("en");
 });
 $("#bt-lang-fr").on("click", ()=>{
+	PlaySound("click");
 	SwitchLang("fr");
 });
 
@@ -174,6 +176,7 @@ function UpdateHexagramsTexts(){
  * Link to Wengu Tartarie book
  */
 $("#book-image").on("click", ()=>{
+	PlaySound("click");
 	const hexatext = HEXAGRAMS_TEXTS[lang][hexagram1];
 	const num = hexatext.substring(0, hexatext.indexOf("."));
 	const url = "http://wengu.tartarie.com/wg/wengu.php?l=Yijing&tire="+yiking+"&no="+num+"&lang="+lang;
@@ -185,6 +188,7 @@ $("#book-image").on("click", ()=>{
  */
 let showInfo = false;
 $("#bt-info").on("click", ()=>{
+	PlaySound("click");
 	showInfo = !showInfo;
 	if (showInfo){
 		info.show();
@@ -194,6 +198,7 @@ $("#bt-info").on("click", ()=>{
 });
 
 info.on("click", ()=>{
+	PlaySound("click");
 	info.hide();
 	showInfo = false;
 });
@@ -242,6 +247,7 @@ preloadXHR([
 	'assets/sounds/coin1.mp3',
 	'assets/sounds/coin2.mp3',
 	'assets/sounds/yiking.mp3',
+	'assets/sounds/click.mp3'
 ]);
 
 function preloadXHR(assetsAr){
