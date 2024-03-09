@@ -1,3 +1,9 @@
+/**
+ * HEXAGRAMS_TEXTS
+ * 64 titles with their number and localization en/fr
+ * @type {Object}
+ */
+
 const HEXAGRAMS_TEXTS = {};
 
 HEXAGRAMS_TEXTS["en"] = {

@@ -1,4 +1,10 @@
-var UI_TEXTS = {};
+/**
+ * UI_TEXTS
+ * Localization en/fr
+ * @type {Object}
+ */
+
+const UI_TEXTS = {};
 
 UI_TEXTS["en"] = {
 	"baseline": "Book of Changes<br>companion app",
