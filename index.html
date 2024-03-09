@@ -86,9 +86,10 @@
 <script src="./assets/data/hexagrams-texts.js"></script>
 <script src="./assets/app/app.js"></script>
 <script>
-if ('serviceWorker' in navigator) {
-	navigator.serviceWorker.register('./sw.js?'+Date.now());
-}
+    if ('serviceWorker' in navigator) {
+        self.registration.unregister();
+        navigator.serviceWorker.register('./sw.js?'+Date.now());
+    }
 </script>
 </body>
 </html>
